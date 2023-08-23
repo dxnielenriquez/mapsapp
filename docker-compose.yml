@@ -1,0 +1,12 @@
+version: '2'
+name: prueba10
+services:
+  webAdmin:
+    container_name: prueba10-frontend
+    image: 'angular:16'
+    working_dir: /app
+    ports:
+      - 4202:4202
+    volumes:
+      - ./:/app:delegated
+    command: ["ng", "serve", "--port", "4202", "--host", "0.0.0.0"]
